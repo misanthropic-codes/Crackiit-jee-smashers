@@ -116,7 +116,7 @@ export function Navbar() {
               ))}
               <Button
                 className="glass-button w-full"
-                onClick={() => window.open('https://example.com/courses', '_blank')}
+                onClick={() => window.open('https://www.crackiit.live/s/store', '_blank')}
               >
                 Buy Courses
               </Button>
