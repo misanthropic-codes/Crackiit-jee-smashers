@@ -1,17 +1,36 @@
 "use client";
-
 import { motion } from "framer-motion";
-import { Facebook, Twitter, Instagram, Youtube, Mail, Phone } from "lucide-react";
+import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, LucideIcon } from "lucide-react";
+
+type LinkSection = {
+  title: string;
+  links: string[];
+};
+
+type ContentSection = {
+  title: string;
+  content: Array<{
+    icon: LucideIcon;
+    text: string;
+  }>;
+};
+
+type FooterSection = LinkSection | ContentSection;
+
+type SocialLink = {
+  icon: LucideIcon;
+  href: string;
+};
 
 export function Footer() {
-  const socialLinks = [
+  const socialLinks: SocialLink[] = [
     { icon: Facebook, href: "#" },
     { icon: Twitter, href: "#" },
     { icon: Instagram, href: "#" },
     { icon: Youtube, href: "#" },
   ];
 
-  const footerSections = [
+  const footerSections: FooterSection[] = [
     {
       title: "Quick Links",
       links: ["About Us", "Courses", "Success Stories", "Contact"],
@@ -24,6 +43,10 @@ export function Footer() {
       ],
     },
   ];
+
+  function isLinkSection(section: FooterSection): section is LinkSection {
+    return 'links' in section;
+  }
 
   return (
     <footer className="bg-primary/5 py-16 px-4">
@@ -42,7 +65,6 @@ export function Footer() {
               successful students who cracked IIT-JEE with us.
             </p>
           </motion.div>
-
           {footerSections.map((section, index) => (
             <motion.div
               key={section.title}
@@ -51,7 +73,7 @@ export function Footer() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <h4 className="text-lg font-semibold mb-6">{section.title}</h4>
-              {"links" in section ? (
+              {isLinkSection(section) ? (
                 <ul className="space-y-4">
                   {section.links.map((link) => (
                     <li key={link}>
@@ -79,7 +101,6 @@ export function Footer() {
               )}
             </motion.div>
           ))}
-
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -99,7 +120,6 @@ export function Footer() {
             </div>
           </motion.div>
         </div>
-
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
