@@ -1,6 +1,7 @@
 "use client";
 
 import { HeroSection } from "@/components/sections/hero";
+import  AboutSection  from "@/components/sections/About";
 import { CoursesSection } from "@/components/sections/courses";
 import { TestimonialsSection } from "@/components/sections/testimonials";
 import { DownloadSection } from "@/components/sections/download";
@@ -11,7 +12,9 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <Navbar />
+     
       <HeroSection />
+      <AboutSection />
       <CoursesSection />
       <TestimonialsSection />
       <DownloadSection />
