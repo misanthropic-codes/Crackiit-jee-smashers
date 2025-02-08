@@ -38,7 +38,7 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section className="py-12 md:py-24 relative overflow-hidden bg-dot-pattern">
+    <section id='whyus' className="py-12 md:py-24 relative overflow-hidden bg-dot-pattern">
       <div className="max-w-6xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

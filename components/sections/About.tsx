@@ -46,6 +46,7 @@ const AnimatedCounter = ({ value, duration = 2, symbol = "" }: AnimatedCounterPr
   }, [value, duration, isVisible]);
 
   return (
+    
     <motion.div
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
@@ -91,7 +92,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="py-20 md:py-32 relative overflow-hidden bg-dot-pattern">
+    <section id='about' className="py-20 md:py-32 relative overflow-hidden bg-dot-pattern">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
       <div className="max-w-6xl mx-auto px-4 relative">
         <motion.div
@@ -235,6 +236,7 @@ const AboutSection = () => {
         </div>
       </div>
     </section>
+    
   );
 };
 

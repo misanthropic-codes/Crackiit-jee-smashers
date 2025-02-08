@@ -25,6 +25,7 @@ export function Navbar() {
   const navItems = [
     { name: 'About', id: 'about' },
     { name: 'Courses', id: 'courses' },
+    { name: 'Why Choose us?', id: 'whyus' },
     { name: 'Testimonials', id: 'testimonials' },
     { name: 'Download App', id: 'download' },
   ]
