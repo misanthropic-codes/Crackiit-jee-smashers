@@ -7,7 +7,7 @@ import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
 export function HeroSection() {
   const stats = [
-    { icon: Users, label: "Active Students", value: "10,000+" },
+    { icon: Users, label: "Active Learners", value: "10,000+" },
     { icon: Trophy, label: "Success Rate", value: "95%" },
     { icon: BookOpen, label: "Total Courses", value: "50+" },
     { icon: Timer, label: "Hours of Content", value: "1,000+" },
