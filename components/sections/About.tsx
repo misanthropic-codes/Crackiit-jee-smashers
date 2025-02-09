@@ -84,7 +84,7 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ value, duration = 2, 
 const AboutSection: React.FC = () => {
   const mentorDetails: MentorDetails = {
     name: "Mritunjay Kumar",
-    title: "Founder & Lead Educator",
+    title: "Founder & Lead Educator Ex-Resonance(Kota , Patna , Hyderabad)",
     image: "https://d502jbuhuh9wk.cloudfront.net/orgData/6623b3e11b1ea87c8d28a618/pages/assets/images/YSPFNwhatsappimage20240502at08.15.146e808c62.jpg",
     description: "Mritunjay aka MJK sir is renowned for his innovative teaching methods and deep understanding of Chemistry concepts. His approach combines theoretical knowledge with practical applications, making complex topics easily digestible for students.",
     stats: [
