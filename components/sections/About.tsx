@@ -1,3 +1,4 @@
+// AboutSection.tsx
 import React, { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
 import { 
@@ -14,13 +15,35 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+// Types
 interface AnimatedCounterProps {
   value: string;
   duration?: number;
   symbol?: string;
 }
 
-const AnimatedCounter = ({ value, duration = 2, symbol = "" }: AnimatedCounterProps) => {
+interface Stat {
+  icon: React.ComponentType;
+  value: string;
+  symbol: string;
+  label: string;
+}
+
+interface MentorDetails {
+  name: string;
+  title: string;
+  image: string;
+  description: string;
+  stats: Stat[];
+  achievements: string[];
+  specializations: string[];
+  social: {
+    [key: string]: string;
+  };
+}
+
+// Components
+const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ value, duration = 2, symbol = "" }) => {
   const [count, setCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -46,7 +69,6 @@ const AnimatedCounter = ({ value, duration = 2, symbol = "" }: AnimatedCounterPr
   }, [value, duration, isVisible]);
 
   return (
-    
     <motion.div
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
@@ -59,8 +81,8 @@ const AnimatedCounter = ({ value, duration = 2, symbol = "" }: AnimatedCounterPr
   );
 };
 
-const AboutSection = () => {
-  const mentorDetails = {
+const AboutSection: React.FC = () => {
+  const mentorDetails: MentorDetails = {
     name: "Mritunjay Kumar",
     title: "Founder & Lead Educator",
     image: "https://d502jbuhuh9wk.cloudfront.net/orgData/6623b3e11b1ea87c8d28a618/pages/assets/images/YSPFNwhatsappimage20240502at08.15.146e808c62.jpg",
@@ -84,11 +106,18 @@ const AboutSection = () => {
       "JOSSA Counselling"
     ],
     social: {
-      linkedin: "https://www.linkedin.com/in/mritunjay-kumar-775484193?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      linkedin: "https://www.linkedin.com/in/mritunjay-kumar-775484193",
       telegram: "https://t.me/iitwithmjk",
-      youtube: "https://youtube.com/@mjk-sir-chemistry?si=_eXl0U0meAd54xWs",
-      instagram: "https://www.instagram.com/theaddictivevoice/?igsh=MW1hcXI2bWJxamU2dg%3D%3D"
+      youtube: "https://youtube.com/@mjk-sir-chemistry",
+      instagram: "https://www.instagram.com/theaddictivevoice"
     }
+  };
+
+  const socialIcons: { [key: string]: React.ComponentType<{ className?: string }> } = {
+    linkedin: LinkedinIcon,
+    telegram: Send,
+    youtube: YoutubeIcon,
+    instagram: InstagramIcon
   };
 
   return (
@@ -130,14 +159,20 @@ const AboutSection = () => {
                   <h3 className="text-3xl font-bold text-white mb-2">{mentorDetails.name}</h3>
                   <p className="text-primary font-medium text-lg">{mentorDetails.title}</p>
                   <div className="flex gap-4 mt-4">
-                    {Object.entries(mentorDetails.social).map(([platform, link]) => (
-                      <Button key={platform} variant="ghost" size="icon" className="bg-white/10 hover:bg-white/20 text-white">
-                        {platform === 'linkedin' && <LinkedinIcon className="w-5 h-5" />}
-                        {platform === 'Telegram' && <Send className="w-5 h-5" />}
-                        {platform === 'youtube' && <YoutubeIcon className="w-5 h-5" />}
-                        {platform === 'instagram' && <InstagramIcon className="w-5 h-5" />}
-                      </Button>
-                    ))}
+                    {Object.entries(mentorDetails.social).map(([platform, url]) => {
+                      const Icon = socialIcons[platform];
+                      return (
+                        <Button 
+                          key={platform}
+                          variant="ghost"
+                          size="icon"
+                          className="bg-white/10 hover:bg-white/20 text-white"
+                          onClick={() => window.open(url, '_blank')}
+                        >
+                          <Icon className="w-5 h-5" />
+                        </Button>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
@@ -169,7 +204,7 @@ const AboutSection = () => {
                     transition={{ delay: index * 0.1 }}
                     className="text-center p-4 rounded-xl bg-primary/5 hover:bg-primary/10 transition-colors duration-300"
                   >
-                    <stat.icon className="w-6 h-6 mx-auto mb-3 text-primary" />
+                    {React.createElement(stat.icon as React.ComponentType<{ className?: string }>, { className: "w-6 h-6 mx-auto mb-3 text-primary" })}
                     <AnimatedCounter value={stat.value} symbol={stat.symbol} />
                     <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
                   </motion.div>
@@ -226,7 +261,11 @@ const AboutSection = () => {
                   viewport={{ once: true }}
                   className="mt-8"
                 >
-                  <Button size="lg" className="w-full md:w-auto text-lg" onClick={() => window.open('https://www.crackiit.live/products/1-Hour-Counselling-and-mentorship-67a84634f5733d1e0e60c0b7?dgps_s=pbl&dgps_u=c&dgps_uid=6623b3e11b1ea87c8d28a61a&dgps_t=cp_m', '_blank')}>
+                  <Button 
+                    size="lg" 
+                    className="w-full md:w-auto text-lg" 
+                    onClick={() => window.open('https://www.crackiit.live/products/1-Hour-Counselling-and-mentorship-67a84634f5733d1e0e60c0b7?dgps_s=pbl&dgps_u=c&dgps_uid=6623b3e11b1ea87c8d28a61a&dgps_t=cp_m', '_blank')}
+                  >
                     Schedule a Session @59
                   </Button>
                 </motion.div>
@@ -236,7 +275,6 @@ const AboutSection = () => {
         </div>
       </div>
     </section>
-    
   );
 };
 
