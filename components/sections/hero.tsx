@@ -65,11 +65,11 @@ export function HeroSection() {
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
-            <Button size="lg" className="glass-button text-lg px-8 py-6">
+            <Button size="lg" className="glass-button text-lg px-8 py-6" onClick={() => window.open('https://www.crackiit.live/s/store', '_blank')}>
               Explore Courses <ChevronRight className="ml-2" />
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6">
-              Free Demo Class
+            <Button size="lg" variant="outline" className="text-lg px-8 py-6" onClick={() => window.open('https://www.crackiit.live/products/1-Hour-Counselling-and-mentorship-67a84634f5733d1e0e60c0b7?dgps_s=pbl&dgps_u=c&dgps_uid=6623b3e11b1ea87c8d28a61a&dgps_t=cp_m', '_blank')}>
+               Demo Class
             </Button>
           </div>
 

@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, LucideIcon } from "lucide-react";
+import {  Instagram, Youtube, Mail, Phone, LucideIcon } from "lucide-react";
 
 type LinkSection = {
   title: string;
@@ -24,10 +24,9 @@ type SocialLink = {
 
 export function Footer() {
   const socialLinks: SocialLink[] = [
-    { icon: Facebook, href: "#" },
-    { icon: Twitter, href: "#" },
-    { icon: Instagram, href: "#" },
-    { icon: Youtube, href: "#" },
+    
+    { icon: Instagram, href: "https://www.instagram.com/theaddictivevoice?igsh=MW1hcXI2bWJxamU2dg==" },
+    { icon: Youtube, href: "https://youtube.com/@mjk-sir-chemistry?si=_eXl0U0meAd54xWs" },
   ];
 
   const footerSections: FooterSection[] = [
@@ -38,8 +37,8 @@ export function Footer() {
     {
       title: "Contact Us",
       content: [
-        { icon: Mail, text: "contact@crackiit.com" },
-        { icon: Phone, text: "+91 1234567890" },
+        { icon: Mail, text: "mjksir97@gmail.com" },
+        { icon: Phone, text: "+91 9783291630" },
       ],
     },
   ];

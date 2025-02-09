@@ -7,7 +7,7 @@ import {
   Clock,
   BookOpen,
   LinkedinIcon, 
-  TwitterIcon, 
+  Send, 
   YoutubeIcon,
   InstagramIcon,
   Trophy
@@ -84,10 +84,10 @@ const AboutSection = () => {
       "JOSSA Counselling"
     ],
     social: {
-      linkedin: "#",
-      twitter: "#",
-      youtube: "#",
-      instagram: "#"
+      linkedin: "https://www.linkedin.com/in/mritunjay-kumar-775484193?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      telegram: "https://t.me/iitwithmjk",
+      youtube: "https://youtube.com/@mjk-sir-chemistry?si=_eXl0U0meAd54xWs",
+      instagram: "https://www.instagram.com/theaddictivevoice/?igsh=MW1hcXI2bWJxamU2dg%3D%3D"
     }
   };
 
@@ -133,7 +133,7 @@ const AboutSection = () => {
                     {Object.entries(mentorDetails.social).map(([platform, link]) => (
                       <Button key={platform} variant="ghost" size="icon" className="bg-white/10 hover:bg-white/20 text-white">
                         {platform === 'linkedin' && <LinkedinIcon className="w-5 h-5" />}
-                        {platform === 'twitter' && <TwitterIcon className="w-5 h-5" />}
+                        {platform === 'Telegram' && <Send className="w-5 h-5" />}
                         {platform === 'youtube' && <YoutubeIcon className="w-5 h-5" />}
                         {platform === 'instagram' && <InstagramIcon className="w-5 h-5" />}
                       </Button>
@@ -226,8 +226,8 @@ const AboutSection = () => {
                   viewport={{ once: true }}
                   className="mt-8"
                 >
-                  <Button size="lg" className="w-full md:w-auto text-lg">
-                    Schedule a Free Consultation
+                  <Button size="lg" className="w-full md:w-auto text-lg" onClick={() => window.open('https://www.crackiit.live/products/1-Hour-Counselling-and-mentorship-67a84634f5733d1e0e60c0b7?dgps_s=pbl&dgps_u=c&dgps_uid=6623b3e11b1ea87c8d28a61a&dgps_t=cp_m', '_blank')}>
+                    Schedule a Session @59
                   </Button>
                 </motion.div>
               </div>
