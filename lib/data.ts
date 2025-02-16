@@ -19,7 +19,7 @@ export const courses = [
     id: 3,
     title: "Jee Smashers Rocket M",
     description: "Not Just a mentor But Your SAARTHI in your JEE Journey. Get the best mentorship and guidance to crack JEE 2026 with our expert faculty.",
-    price: "₹499",
+    price: "₹699",
     image: "https://d502jbuhuh9wk.cloudfront.net/courses/665491a436ab7a5775dd3f00/665491a436ab7a5775dd3f00_scaled_cover.jpg?v=4",
     link: "https://www.crackiit.live/courses/JEE-Smashers-Annual-Udaan-Mentorship-JEE-2026-launchpad-665491a436ab7a5775dd3f00"
   }
