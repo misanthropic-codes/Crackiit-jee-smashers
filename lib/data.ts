@@ -34,14 +34,23 @@ export const testimonials = [
   },
   {
     id: 2,
-    name: "Priya Patel",
-    text: "The teaching methodology is exceptional. The concepts are explained in depth, and the doubt clearing sessions helped me improve my understanding significantly.",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000"
+    name: "Priyanjan Maiti",
+    text: "I have scored 99.756%ile Through these two years your videos have provided me with the much needed guidance to suceed in this exam . Without your knowledge and experience my preparation would have been incomplete ",
+    image: "/"
   },
   {
     id: 3,
-    name: "Amit Kumar",
-    text: "Best online platform for JEE preparation! The quality of content and practice material is outstanding. Secured 99.8 percentile in JEE Mains.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000"
-  }
+    name: "Sheetal Dhote",
+    text: " i have scored 98.6%ile and i would say that this the best online platform for JEE preparation! The quality of content and practice material is outstanding. Secured 99.8 percentile in JEE Mains.",
+   image: "/"
+  },
+  {
+    
+      id: 4,
+      name: "Rajat Kumar Singh",
+      text: "I have scored 99.3%ile and I am the Sikkim State Topper. Your videos have been an essential part of my preparation. The guidance and insights provided helped me stay focused and on track. Without your expertise, achieving this rank would have been difficult.",
+      image: "/"
+  
+  
+  },
 ];
