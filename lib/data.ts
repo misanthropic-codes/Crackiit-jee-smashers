@@ -28,9 +28,9 @@ export const courses = [
 export const testimonials = [
   {
     id: 1,
-    name: "Rahul Sharma",
-    text: "Thanks to CrackIIT's comprehensive courses and expert faculty, I secured AIR 235 in JEE Advanced. The structured approach and regular mock tests were game-changers!",
-    image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=1000"
+    name: "Manav Chauhan",
+    text: "I have scored 99.71%ile i would Thank CrackIIT: Jee smashers and Mjk sir for providing me the guidance and motivating me to study so that i could work hard for my goals. Thank you sir for Staying there for me till the end ",
+    image: "/"
   },
   {
     id: 2,
