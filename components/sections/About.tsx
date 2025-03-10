@@ -1,17 +1,17 @@
 // AboutSection.tsx
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { 
-  Users, 
+import {
+  Users,
   Instagram,
   Youtube,
   Clock,
   BookOpen,
-  LinkedinIcon, 
-  Send, 
+  LinkedinIcon,
+  Send,
   YoutubeIcon,
   InstagramIcon,
-  Trophy
+  Trophy,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -43,28 +43,35 @@ interface MentorDetails {
 }
 
 // Components
-const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ value, duration = 2, symbol = "" }) => {
+const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
+  value,
+  duration = 2,
+  symbol = "",
+}) => {
   const [count, setCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     if (!isVisible) return;
-    
+
     let startTime: number | undefined;
     const startValue = 0;
-    const endValue = parseInt(value.replace(/[^0-9]/g, ''));
-    
+    const endValue = parseInt(value.replace(/[^0-9]/g, ""));
+
     const animation = (currentTime: number) => {
       if (!startTime) startTime = currentTime;
-      const progress = Math.min((currentTime - startTime) / (duration * 1000), 1);
-      
+      const progress = Math.min(
+        (currentTime - startTime) / (duration * 1000),
+        1
+      );
+
       setCount(Math.floor(progress * (endValue - startValue) + startValue));
-      
+
       if (progress < 1) {
         requestAnimationFrame(animation);
       }
     };
-    
+
     requestAnimationFrame(animation);
   }, [value, duration, isVisible]);
 
@@ -76,7 +83,8 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ value, duration = 2, 
       onViewportEnter={() => setIsVisible(true)}
       className="stat-value"
     >
-      {count}{symbol}
+      {count}
+      {symbol}
     </motion.div>
   );
 };
@@ -85,43 +93,55 @@ const AboutSection: React.FC = () => {
   const mentorDetails: MentorDetails = {
     name: "Mritunjay Kumar",
     title: "Founder & Lead Educator Ex-Resonance(Kota , Patna , Hyderabad)",
-    image: "https://d502jbuhuh9wk.cloudfront.net/orgData/6623b3e11b1ea87c8d28a618/pages/assets/images/YSPFNwhatsappimage20240502at08.15.146e808c62.jpg",
-    description: "Mritunjay aka MJK sir is renowned for his innovative teaching methods and deep understanding of Chemistry concepts. His approach combines theoretical knowledge with practical applications, making complex topics easily digestible for students.",
+    image:
+      "https://d502jbuhuh9wk.cloudfront.net/orgData/6623b3e11b1ea87c8d28a618/pages/assets/images/YSPFNwhatsappimage20240502at08.15.146e808c62.jpg",
+    description:
+      "Mritunjay aka MJK sir is renowned for his innovative teaching methods and deep understanding of Chemistry concepts. His approach combines theoretical knowledge with practical applications, making complex topics easily digestible for students.",
     stats: [
       { icon: Users, value: "20000", symbol: "+", label: "Students Taught" },
-      { icon: Instagram, value: "9", symbol: "K", label: "Instagram Followers" },
-      { icon: Youtube, value: "15", symbol: "K", label: "YouTube Subscribers" },
-      { icon: Clock, value: "3", symbol: "+", label: "Years Teaching" }
+      {
+        icon: Instagram,
+        value: "15",
+        symbol: "K",
+        label: "Instagram Followers",
+      },
+      { icon: Youtube, value: "16", symbol: "K", label: "YouTube Subscribers" },
+      { icon: Clock, value: "3", symbol: "+", label: "Years Teaching" },
     ],
     achievements: [
       "Trained 10,000+ students for IIT-JEE",
       "Most followed Chemistry educator in both North and South INDIA on Instagram",
       "Invited at IIT Bombay TechFest and RVCE banaglore as a guest speaker",
-      "Creator of innovative teaching methodologies"
+      "Creator of innovative teaching methodologies",
     ],
     specializations: [
       "Advanced Chemistry",
       "JEE Problem Solving",
       "Competitive Exam Strategy",
-      "JOSSA Counselling"
+      "JOSSA Counselling",
     ],
     social: {
       linkedin: "https://www.linkedin.com/in/mritunjay-kumar-775484193",
       telegram: "https://t.me/iitwithmjk",
       youtube: "https://youtube.com/@mjk-sir-chemistry",
-      instagram: "https://www.instagram.com/theaddictivevoice"
-    }
+      instagram: "https://www.instagram.com/theaddictivevoice",
+    },
   };
 
-  const socialIcons: { [key: string]: React.ComponentType<{ className?: string }> } = {
+  const socialIcons: {
+    [key: string]: React.ComponentType<{ className?: string }>;
+  } = {
     linkedin: LinkedinIcon,
     telegram: Send,
     youtube: YoutubeIcon,
-    instagram: InstagramIcon
+    instagram: InstagramIcon,
   };
 
   return (
-    <section id='about' className="py-20 md:py-32 relative overflow-hidden bg-dot-pattern">
+    <section
+      id="about"
+      className="py-20 md:py-32 relative overflow-hidden bg-dot-pattern"
+    >
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
       <div className="max-w-6xl mx-auto px-4 relative">
         <motion.div
@@ -149,35 +169,41 @@ const AboutSection: React.FC = () => {
           >
             <div className="glass-card rounded-2xl overflow-hidden shadow-2xl">
               <div className="relative group">
-                <img 
-                  src={mentorDetails.image} 
+                <img
+                  src={mentorDetails.image}
                   alt={mentorDetails.name}
                   className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-8">
-                  <h3 className="text-3xl font-bold text-white mb-2">{mentorDetails.name}</h3>
-                  <p className="text-primary font-medium text-lg">{mentorDetails.title}</p>
+                  <h3 className="text-3xl font-bold text-white mb-2">
+                    {mentorDetails.name}
+                  </h3>
+                  <p className="text-primary font-medium text-lg">
+                    {mentorDetails.title}
+                  </p>
                   <div className="flex gap-4 mt-4">
-                    {Object.entries(mentorDetails.social).map(([platform, url]) => {
-                      const Icon = socialIcons[platform];
-                      return (
-                        <Button 
-                          key={platform}
-                          variant="ghost"
-                          size="icon"
-                          className="bg-white/10 hover:bg-white/20 text-white"
-                          onClick={() => window.open(url, '_blank')}
-                        >
-                          <Icon className="w-5 h-5" />
-                        </Button>
-                      );
-                    })}
+                    {Object.entries(mentorDetails.social).map(
+                      ([platform, url]) => {
+                        const Icon = socialIcons[platform];
+                        return (
+                          <Button
+                            key={platform}
+                            variant="ghost"
+                            size="icon"
+                            className="bg-white/10 hover:bg-white/20 text-white"
+                            onClick={() => window.open(url, "_blank")}
+                          >
+                            <Icon className="w-5 h-5" />
+                          </Button>
+                        );
+                      }
+                    )}
                   </div>
                 </div>
               </div>
             </div>
-            
+
             {/* Description Card */}
             <div className="glass-card rounded-2xl p-6">
               <p className="text-lg text-muted-foreground leading-relaxed">
@@ -204,9 +230,14 @@ const AboutSection: React.FC = () => {
                     transition={{ delay: index * 0.1 }}
                     className="text-center p-4 rounded-xl bg-primary/5 hover:bg-primary/10 transition-colors duration-300"
                   >
-                    {React.createElement(stat.icon as React.ComponentType<{ className?: string }>, { className: "w-6 h-6 mx-auto mb-3 text-primary" })}
+                    {React.createElement(
+                      stat.icon as React.ComponentType<{ className?: string }>,
+                      { className: "w-6 h-6 mx-auto mb-3 text-primary" }
+                    )}
                     <AnimatedCounter value={stat.value} symbol={stat.symbol} />
-                    <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
+                    <div className="text-sm text-muted-foreground mt-1">
+                      {stat.label}
+                    </div>
                   </motion.div>
                 ))}
               </div>
@@ -241,7 +272,7 @@ const AboutSection: React.FC = () => {
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {mentorDetails.specializations.map((spec, index) => (
-                      <motion.span 
+                      <motion.span
                         key={index}
                         initial={{ opacity: 0, scale: 0.8 }}
                         whileInView={{ opacity: 1, scale: 1 }}
@@ -261,10 +292,15 @@ const AboutSection: React.FC = () => {
                   viewport={{ once: true }}
                   className="mt-8"
                 >
-                  <Button 
-                    size="lg" 
-                    className="w-full md:w-auto text-lg" 
-                    onClick={() => window.open('https://www.crackiit.live/products/1-Hour-Counselling-and-mentorship-67a84634f5733d1e0e60c0b7?dgps_s=pbl&dgps_u=c&dgps_uid=6623b3e11b1ea87c8d28a61a&dgps_t=cp_m', '_blank')}
+                  <Button
+                    size="lg"
+                    className="w-full md:w-auto text-lg"
+                    onClick={() =>
+                      window.open(
+                        "https://learn.crackiit.site/products/1-Hour-Counselling-and-mentorship-67a84634f5733d1e0e60c0b7?dgps_s=pbl&dgps_u=c&dgps_uid=6623b3e11b1ea87c8d28a61a&dgps_t=cp_m",
+                        "_blank"
+                      )
+                    }
                   >
                     Schedule a Session @59
                   </Button>
