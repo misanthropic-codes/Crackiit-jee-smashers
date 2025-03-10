@@ -50,26 +50,43 @@ export function HeroSection() {
               #1 Platform for IIT-JEE Preparation
             </span>
           </div>
-          
+
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-gradient">
             CrackIIT: JEE Smashers
           </h1>
-          
+
           <TextGenerateEffect
             words="Transform Your IIT-JEE Journey with Expert-Led Courses"
             className="text-xl md:text-2xl mb-8 text-foreground/80"
           />
 
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-            Join thousands of successful students who have cracked IIT-JEE with our comprehensive courses, expert faculty, and proven methodology.
+            Join thousands of successful students who have cracked IIT-JEE with
+            our comprehensive courses, expert faculty, and proven methodology.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
-            <Button size="lg" className="glass-button text-lg px-8 py-6" onClick={() => window.open('https://www.crackiit.live/s/store', '_blank')}>
+            <Button
+              size="lg"
+              className="glass-button text-lg px-8 py-6"
+              onClick={() =>
+                window.open("https://learn.crackiit.site/s/store", "_blank")
+              }
+            >
               Explore Courses <ChevronRight className="ml-2" />
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6" onClick={() => window.open('https://www.crackiit.live/products/1-Hour-Counselling-and-mentorship-67a84634f5733d1e0e60c0b7?dgps_s=pbl&dgps_u=c&dgps_uid=6623b3e11b1ea87c8d28a61a&dgps_t=cp_m', '_blank')}>
-               Demo Class
+            <Button
+              size="lg"
+              variant="outline"
+              className="text-lg px-8 py-6"
+              onClick={() =>
+                window.open(
+                  "https://learn.crackiit.site/products/1-Hour-Counselling-and-mentorship-67a84634f5733d1e0e60c0b7?dgps_s=pbl&dgps_u=c&dgps_uid=6623b3e11b1ea87c8d28a61a&dgps_t=cp_m",
+                  "_blank"
+                )
+              }
+            >
+              Demo Class
             </Button>
           </div>
 
