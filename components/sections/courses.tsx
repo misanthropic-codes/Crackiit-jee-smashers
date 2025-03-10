@@ -33,7 +33,8 @@ export function CoursesSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg text-muted-foreground max-w-2xl mx-auto"
           >
-            Comprehensive courses designed by IIT alumni and experienced faculty to help you achieve your dream of getting into IIT.
+            Comprehensive courses designed by IIT alumni and experienced faculty
+            to help you achieve your dream of getting into IIT.
           </motion.p>
         </div>
 
@@ -58,11 +59,13 @@ export function CoursesSection() {
                   </div>
                 </div>
                 <div className="p-8">
-                  <h3 className="text-2xl font-semibold mb-3">{course.title}</h3>
+                  <h3 className="text-2xl font-semibold mb-3">
+                    {course.title}
+                  </h3>
                   <p className="text-muted-foreground mb-6">
                     {course.description}
                   </p>
-                  
+
                   <div className="grid grid-cols-2 gap-4 mb-6">
                     <div className="flex items-center text-sm text-muted-foreground">
                       <Clock className="w-4 h-4 mr-2" />
@@ -110,7 +113,14 @@ export function CoursesSection() {
           transition={{ duration: 0.5 }}
           className="text-center mt-12"
         >
-          <Button variant="outline" size="lg" className="text-lg" onClick={() => window.open("https://www.crackiit.live/s/store", "_blank")}>
+          <Button
+            variant="outline"
+            size="lg"
+            className="text-lg"
+            onClick={() =>
+              window.open("https://learn.crackiit.site/s/store", "_blank")
+            }
+          >
             View All Courses <ChevronRight className="ml-2" />
           </Button>
         </motion.div>
