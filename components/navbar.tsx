@@ -1,34 +1,34 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from 'react'
-import { Moon, Sun, Menu, X } from 'lucide-react'
-import { useTheme } from 'next-themes'
-import { Button } from './ui/button'
+import { useState, useEffect } from "react";
+import { Moon, Sun, Menu, X } from "lucide-react";
+import { useTheme } from "next-themes";
+import { Button } from "./ui/button";
 
 export function Navbar() {
-  const [mounted, setMounted] = useState(false)
-  const { theme, setTheme } = useTheme()
-  const [isOpen, setIsOpen] = useState(false)
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id)
+    const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+      element.scrollIntoView({ behavior: "smooth" });
     }
-    setIsOpen(false)
-  }
+    setIsOpen(false);
+  };
 
   const navItems = [
-    { name: 'About', id: 'about' },
-    { name: 'Courses', id: 'courses' },
-    { name: 'Why Choose us?', id: 'whyus' },
-    { name: 'Testimonials', id: 'testimonials' },
-    { name: 'Download App', id: 'download' },
-  ]
+    { name: "About", id: "about" },
+    { name: "Courses", id: "courses" },
+    { name: "Why Choose us?", id: "whyus" },
+    { name: "Testimonials", id: "testimonials" },
+    { name: "Download App", id: "download" },
+  ];
 
   return (
     <nav className="fixed top-0 w-full z-50 glass-card">
@@ -49,10 +49,12 @@ export function Navbar() {
                 {item.name}
               </button>
             ))}
-            
+
             <Button
               className="glass-button"
-              onClick={() => window.open('https://www.crackiit.live/s/store', '_blank')}
+              onClick={() =>
+                window.open("https://learn.crackiit.site/s/store", "_blank")
+              }
             >
               Buy Courses
             </Button>
@@ -60,16 +62,15 @@ export function Navbar() {
             <Button
               variant="ghost"
               size="icon"
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               className="ml-4"
             >
-              {mounted && (
-                theme === 'dark' ? (
+              {mounted &&
+                (theme === "dark" ? (
                   <Sun className="h-5 w-5" />
                 ) : (
                   <Moon className="h-5 w-5" />
-                )
-              )}
+                ))}
             </Button>
           </div>
 
@@ -78,15 +79,14 @@ export function Navbar() {
             <Button
               variant="ghost"
               size="icon"
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             >
-              {mounted && (
-                theme === 'dark' ? (
+              {mounted &&
+                (theme === "dark" ? (
                   <Sun className="h-5 w-5" />
                 ) : (
                   <Moon className="h-5 w-5" />
-                )
-              )}
+                ))}
             </Button>
             <Button
               variant="ghost"
@@ -117,7 +117,9 @@ export function Navbar() {
               ))}
               <Button
                 className="glass-button w-full"
-                onClick={() => window.open('https://www.crackiit.live/s/store', '_blank')}
+                onClick={() =>
+                  window.open("https://www.crackiit.live/s/store", "_blank")
+                }
               >
                 Buy Courses
               </Button>
