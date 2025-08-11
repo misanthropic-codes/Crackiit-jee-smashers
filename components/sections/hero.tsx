@@ -77,6 +77,14 @@ export function HeroSection() {
             </Button>
             <Button
               size="lg"
+              className="glass-button text-lg px-8 py-6"
+              onClick={() => (window.location.href = "/mentorship")}
+            >
+              Get Mentorship
+            </Button>
+
+            <Button
+              size="lg"
               variant="outline"
               className="text-lg px-8 py-6"
               onClick={() =>

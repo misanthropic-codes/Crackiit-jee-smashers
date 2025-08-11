@@ -23,6 +23,7 @@ export function Navbar() {
   };
 
   const navItems = [
+    { name: "Mentorship", href: "/mentorship" },
     { name: "About", id: "about" },
     { name: "Courses", id: "courses" },
     { name: "Why Choose us?", id: "whyus" },
@@ -40,15 +41,25 @@ export function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="text-foreground/80 hover:text-primary transition-colors"
-              >
-                {item.name}
-              </button>
-            ))}
+            {navItems.map((item) =>
+              item.href ? (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-foreground/80 hover:text-primary transition-colors"
+                >
+                  {item.name}
+                </a>
+              ) : (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id!)}
+                  className="text-foreground/80 hover:text-primary transition-colors"
+                >
+                  {item.name}
+                </button>
+              )
+            )}
 
             <Button
               className="glass-button"
@@ -106,15 +117,17 @@ export function Navbar() {
         {isOpen && (
           <div className="md:hidden py-6">
             <div className="flex flex-col space-y-6">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="text-foreground/80 hover:text-primary transition-colors text-lg"
-                >
-                  {item.name}
-                </button>
-              ))}
+              {navItems
+                .filter((item) => item.id)
+                .map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id!)}
+                    className="text-foreground/80 hover:text-primary transition-colors text-lg"
+                  >
+                    {item.name}
+                  </button>
+                ))}
               <Button
                 className="glass-button w-full"
                 onClick={() =>
