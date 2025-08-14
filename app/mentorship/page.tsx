@@ -428,6 +428,20 @@ export default function MentorshipPage() {
         </div>
       </section>
       <section className="py-32 px-4 bg-primary/5">
+        <div className="max-w-4xl mx-auto text-center mb-12">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-4xl md:text-5xl font-bold mb-4 text-gradient"
+          >
+            FAQs
+          </motion.h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Answers to the most common questions about MJK Sir's JEE Mentorship
+            Program.
+          </p>
+        </div>
         <div className="max-w-4xl mx-auto">
           <Accordion type="single" collapsible>
             <AccordionItem value="item-1">
