@@ -20,6 +20,12 @@ import {
 } from "lucide-react";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/sections/footer";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const mentorshipPlans = [
   {
@@ -91,7 +97,6 @@ export default function MentorshipPage() {
   return (
     <main className="min-h-screen bg-background">
       <Navbar />
-
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden animated-bg py-20 md:py-32">
         <div className="absolute inset-0">
@@ -177,7 +182,6 @@ export default function MentorshipPage() {
           </motion.div>
         </div>
       </section>
-
       {/* Plans Comparison Section */}
       <section id="plans" className="py-32 px-4 bg-primary/5">
         <div className="max-w-7xl mx-auto">
@@ -366,7 +370,6 @@ export default function MentorshipPage() {
           </motion.div>
         </div>
       </section>
-
       {/* Why Choose Mentorship Section */}
       <section className="py-32 px-4">
         <div className="max-w-6xl mx-auto">
@@ -424,7 +427,84 @@ export default function MentorshipPage() {
           </div>
         </div>
       </section>
+      <section className="py-32 px-4 bg-primary/5">
+        <div className="max-w-4xl mx-auto">
+          <Accordion type="single" collapsible>
+            <AccordionItem value="item-1">
+              <AccordionTrigger>
+                Who can join this program and what is the course validity?
+              </AccordionTrigger>
+              <AccordionContent>
+                Anyone preparing for JEE (11th, 12th, or droppers) can join it,
+                and it is valid for 1 year. 11th students need to renew their
+                subscription again in 12th.
+              </AccordionContent>
+            </AccordionItem>
 
+            <AccordionItem value="item-2">
+              <AccordionTrigger>
+                Is this Mentorship provided by MJK Sir himself?
+              </AccordionTrigger>
+              <AccordionContent>
+                Yes! You will be guided by MJK Sir himself. He wants to give
+                personal attention to each student individually.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-3">
+              <AccordionTrigger>
+                What is the most preferred — Silver or Platinum mentorship?
+              </AccordionTrigger>
+              <AccordionContent>
+                Usually, students go for Platinum mentorship as they get call
+                support and handwritten short notes of MJK Sir. Also, if you are
+                targeting JEE Advanced, then this would be the best option.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-4">
+              <AccordionTrigger>Is the fee refundable?</AccordionTrigger>
+              <AccordionContent>
+                No. MJK Sir himself is a brand, so before buying you can check
+                reviews and enroll accordingly. No refund policy.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-5">
+              <AccordionTrigger>
+                Do we get Kota coaching materials?
+              </AccordionTrigger>
+              <AccordionContent>
+                Yes! You will get all the sheets, DPPs, and test papers with
+                complete detailed solutions.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-6">
+              <AccordionTrigger>
+                Any counselling perks for Platinum membership?
+              </AccordionTrigger>
+              <AccordionContent>
+                Yes! You know that college counselling means MJK Sir! There will
+                be a huge rush at the time of counselling, but mentorship
+                students will be given top priority and early bird discount
+                offers.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-7">
+              <AccordionTrigger>
+                Do we get any WhatsApp group to join and interact daily?
+              </AccordionTrigger>
+              <AccordionContent>
+                Yes! You will be added to your respective Silver or Platinum
+                group where everything will be uploaded. Google Meet links will
+                also be shared there.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
+      </section>
       <Footer />
     </main>
   );
